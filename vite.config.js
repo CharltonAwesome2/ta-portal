@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
   plugins: [react()],
+  base: "/ta-portal/",
   server: {
     port: 5174,
   },
