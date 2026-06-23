@@ -1,0 +1,108 @@
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard h1 {
+  color: #1a237e;
+  margin-bottom: 2rem;
+}
+
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebarLink {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.sidebarLink:hover {
+  background: #e3f2fd;
+  color: #1a237e;
+}
+
+.sidebarLink.active {
+  background: #1a237e;
+  color: white;
+}
+
+.content {
+  flex: 1;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.recentList {
+  min-height: 100px;
+  color: #666;
+}
+
+.humanCapitalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.statCard {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.statCard h4 {
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+@media (max-width: 768px) {
+  .dashboardLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
