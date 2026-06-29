@@ -1,51 +1,123 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .container h1 {
   color: #1a237e;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
   margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
 
 .applyLayout {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
+/* Sidebar Styles */
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: sticky;
+  top: 1rem;
 }
 
-.guideList,
-.noteList {
-  list-style: none;
-  padding: 0;
+.roleList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.guideList li,
-.noteList li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f0f0f0;
+.roleItem {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 3px solid #1a237e;
+  transition: all 0.2s;
+}
+
+.roleItem:hover {
+  background: #f0f2f5;
+  transform: translateX(4px);
+}
+
+.roleItem h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1a237e;
   font-size: 0.95rem;
 }
 
-.guideList li:last-child,
-.noteList li:last-child {
+.trainingList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trainingList li {
+  padding: 0.25rem 0;
+  font-size: 0.85rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.trainingList li::before {
+  content: "▸";
+  color: #1a237e;
+  font-weight: bold;
+}
+
+.guideList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guideList li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #444;
+}
+
+.guideList li:last-child {
   border-bottom: none;
 }
 
-.guideList li::before {
-  content: "📋 ";
+.guideList li .stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #1a237e;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
 }
 
-.noteList li::before {
-  content: "⚠️ ";
+.guideList li .stepText {
+  flex: 1;
 }
 
+/* Form Container Styles */
 .formContainer {
   flex: 1;
 }
@@ -53,7 +125,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .formGroup {
@@ -63,27 +135,79 @@
 }
 
 .formGroup label {
-  font-weight: 500;
+  font-weight: 600;
   color: #333;
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.formGroup label .required {
+  color: #f44336;
+  font-weight: bold;
 }
 
 .formGroup input,
 .formGroup select {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.2s;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: inherit;
+}
+
+.formGroup input:hover,
+.formGroup select:hover {
+  border-color: #b0b0b0;
 }
 
 .formGroup input:focus,
 .formGroup select:focus {
   outline: none;
   border-color: #1a237e;
-  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+  box-shadow: 0 0 0 4px rgba(26, 35, 126, 0.1);
+  transform: translateY(-1px);
 }
 
+.formGroup input::placeholder {
+  color: #aaa;
+}
+
+/* Training Modules Display */
+.trainingModules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.trainingModule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #f0f4ff;
+  border: 1px solid #dce3f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1a237e;
+  transition: all 0.2s;
+}
+
+.trainingModule:hover {
+  background: #e3eaf7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(26, 35, 126, 0.1);
+}
+
+.moduleIcon {
+  font-size: 1.2rem;
+}
+
+/* File Upload Styles */
 .fileList {
   display: flex;
   flex-wrap: wrap;
@@ -92,34 +216,192 @@
 }
 
 .fileTag {
-  background: #e3f2fd;
-  color: #1a237e;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
   font-size: 0.85rem;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #a5d6a7;
 }
 
+.fileTag::before {
+  content: "📄";
+}
+
+/* Submit Button */
 .submitBtn {
-  background: #1a237e;
+  background: linear-gradient(135deg, #1a237e, #283593);
   color: white;
   border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 0.875rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
   margin-top: 1rem;
   align-self: flex-start;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
 }
 
 .submitBtn:hover {
-  background: #0d1555;
+  background: linear-gradient(135deg, #0d1555, #1a237e);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 35, 126, 0.4);
+}
+
+.submitBtn:hover::before {
+  left: 100%;
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+/* Form Group with Role Selection Animation */
+.formGroup select option {
+  padding: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .applyLayout {
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .container h1 {
+    font-size: 1.75rem;
+  }
+  
   .applyLayout {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
+  
+  .sidebar {
+    position: static;
+    order: 2;
+  }
+  
+  .formContainer {
+    order: 1;
+  }
+  
+  .trainingModules {
+    grid-template-columns: 1fr;
+  }
+  
+  .submitBtn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .roleItem {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  .trainingModule {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .guideList li {
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+  
+  .guideList li .stepNumber {
+    width: 24px;
+    height: 24px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Loading and Error States (optional) */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.error {
+  border-color: #f44336 !important;
+  background: #ffebee !important;
+}
+
+.errorMessage {
+  color: #f44336;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Success Animation */
+.success {
+  animation: successPulse 0.5s ease;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Custom Scrollbar for Sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }

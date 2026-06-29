@@ -1,0 +1,451 @@
+.resourcesPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.resourcesPage h1 {
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.resourcesLayout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.roleList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.roleBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.roleBtn:hover {
+  background: #e8eaf6;
+  color: #1a237e;
+  transform: translateX(4px);
+}
+
+.roleBtn.active {
+  background: #1a237e;
+  color: white;
+  border-color: #1a237e;
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+}
+
+.roleIcon {
+  font-size: 1.2rem;
+}
+
+.packTypeList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.packTypeBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.packTypeBtn:hover {
+  background: #e8eaf6;
+  color: #1a237e;
+  transform: translateX(4px);
+}
+
+.packTypeBtn.active {
+  background: #283593;
+  color: white;
+  border-color: #283593;
+  box-shadow: 0 4px 12px rgba(40, 53, 147, 0.3);
+}
+
+.packIcon {
+  font-size: 1.2rem;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.statItem:last-child {
+  border-bottom: none;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.statLabel {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.packDescription {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.downloadAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #4caf50, #388e3c);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.downloadAllBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* File Grid */
+.fileGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.fileCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.fileCard:hover {
+  background: #e8eaf6;
+  transform: translateX(4px);
+  border-color: #1a237e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.fileIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.fileInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.fileName {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileMeta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.fileType {
+  font-size: 0.8rem;
+  color: #999;
+  background: #e9ecef;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #1a237e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.downloadBtn:hover {
+  transform: scale(1.1);
+  background: #0d1555;
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+}
+
+/* Empty States */
+.emptyState {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.emptyFiles {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .resourcesLayout {
+    grid-template-columns: 240px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .resourcesPage h1 {
+    font-size: 1.75rem;
+  }
+  
+  .resourcesLayout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .sidebar > * {
+    margin-bottom: 0;
+  }
+  
+  .roleList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .roleBtn {
+    flex: 1;
+    min-width: 100px;
+    justify-content: center;
+  }
+  
+  .packTypeList {
+    flex-direction: row;
+  }
+  
+  .packTypeBtn {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .stats {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .statItem {
+    border-bottom: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .fileCard {
+    flex-wrap: wrap;
+  }
+  
+  .fileInfo {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .downloadAllBtn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resourcesPage {
+    padding: 0 0.75rem;
+  }
+  
+  .resourcesPage h1 {
+    font-size: 1.5rem;
+  }
+  
+  .sidebar {
+    grid-template-columns: 1fr;
+  }
+  
+  .roleBtn {
+    min-width: 80px;
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+  }
+  
+  .packTypeBtn {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .statItem {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .fileCard {
+    padding: 0.75rem;
+  }
+  
+  .fileName {
+    font-size: 0.85rem;
+  }
+  
+  .downloadBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Progress Bar */
+.progressContainer {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progressBar {
+  flex: 1;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a237e, #4caf50);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: 0.9rem;
+  color: #666;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Disabled button states */
+.roleBtn:disabled,
+.packTypeBtn:disabled,
+.downloadBtn:disabled,
+.downloadAllBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.fileSize {
+  font-size: 0.8rem;
+  color: #999;
+}
